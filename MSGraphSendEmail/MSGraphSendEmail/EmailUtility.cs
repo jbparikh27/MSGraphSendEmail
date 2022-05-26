@@ -156,6 +156,8 @@ namespace MSGraphSendEmail
             return _accessToken;
         }
 
+        //Here, if we have token details already stored in static class Access Token then 
+        //we will use token value from there else will use FetchToken to retrieve the token.
         private async Task<AccessToken> FetchToken()
         {
             string[] scopes = new string[] { $"{_emailSettings.ApiUrl}.default" };
